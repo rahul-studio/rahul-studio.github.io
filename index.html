@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09090f">
+<meta name="description" content="RahulStudio — Digital marketing, graphic design, video editing and social media management by Rahul Kumar.">
+<title>RahulStudio | Creative Digital Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#09090f;
+  --card:#13131e;
+  --purple:#a78bfa;
+  --pink:#e879f9;
+  --text:#f5f3ff;
+  --muted:#a1a1b5;
+}
+
+* {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+a {color:inherit;text-decoration:none}
+button {font:inherit}
+
+.container {width:min(1120px,90%);margin:auto}
+
+nav {
+  position:fixed;
+  top:0;left:0;width:100%;
+  z-index:100;
+  padding:20px 0;
+  background:rgba(9,9,15,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #ffffff12;
+}
+
+.nav-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:25px;font-weight:700;
+}
+
+.logo span {color:var(--purple)}
+
+.nav-links {display:flex;gap:25px;align-items:center}
+.nav-links a {font-size:13px;color:var(--muted)}
+.nav-links a:hover {color:var(--purple)}
+
+.menu-btn {
+  display:none;
+  background:none;border:0;color:white;
+  font-size:25px;
+}
+
+.btn {
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:9px;
+  background:linear-gradient(110deg,#a78bfa,#e879f9);
+  color:#100b1c;
+  font-weight:700;
+  font-size:14px;
+  transition:.3s;
+}
+
+.btn:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 35px #a78bfa55;
+}
+
+.hero {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding:140px 0 90px;
+}
+
+.glow {
+  position:absolute;
+  width:400px;height:400px;
+  background:#8b5cf6;
+  filter:blur(160px);
+  opacity:.19;
+  border-radius:50%;
+  top:20%;right:-100px;
+  pointer-events:none;
+  animation:float 7s infinite alternate;
+}
+
+@keyframes float {
+  to {transform:translate(-100px,60px) scale(1.2)}
+}
+
+.hero-content {position:relative;max-width:800px}
+
+.eyebrow {
+  color:var(--purple);
+  letter-spacing:3px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.hero h1 {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(43px,8vw,82px);
+  line-height:1.08;
+  letter-spacing:-3px;
+  margin-bottom:25px;
+}
+
+.gradient {
+  background:linear-gradient(100deg,#a78bfa,#e879f9,#60a5fa);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p {
+  color:var(--muted);
+  line-height:1.9;
+  font-size:16px;
+  max-width:600px;
+  margin-bottom:30px;
+}
+
+.hero-buttons {display:flex;gap:14px;flex-wrap:wrap}
+
+.btn-outline {
+  padding:12px 22px;
+  border:1px solid #ffffff35;
+  border-radius:9px;
+  font-size:14px;
+  transition:.3s;
+}
+
+.btn-outline:hover {border-color:var(--purple);color:var(--purple)}
+
+.section {padding:100px 0}
+
+.section-heading {margin-bottom:45px}
+
+.section-heading small {
+  color:var(--purple);
+  letter-spacing:3px;
+  font-size:11px;
+  font-weight:700;
+}
+
+.section-heading h2 {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(32px,5vw,48px);
+  margin:12px 0;
+}
+
+.section-heading p {color:var(--muted);line-height:1.8}
+
+.services {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+
+.service-card,.project-card,.certificate-card {
+  background:var(--card);
+  border:1px solid #ffffff12;
+  border-radius:16px;
+  padding:25px;
+  transition:.35s;
+}
+
+.service-card:hover,.project-card:hover,.certificate-card:hover {
+  transform:translateY(-8px);
+  border-color:#a78bfa75;
+  box-shadow:0 15px 35px #0005;
+}
+
+.service-icon {font-size:29px;margin-bottom:20px}
+.service-card h3 {font-size:17px;margin-bottom:12px}
+.service-card p {font-size:13px;color:var(--muted);line-height:1.8}
+
+.projects {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.project-card {padding:18px}
+
+.project-image {
+  height:210px;
+  background:linear-gradient(135deg,#27203e,#151523);
+  border:1px dashed #a78bfa65;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#c4b5fd;
+  text-align:center;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.project-card h3 {margin-bottom:8px}
+.project-card p {font-size:13px;color:var(--muted);line-height:1.7}
+
+.tags {display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.tag {
+  background:#a78bfa18;
+  color:#c4b5fd;
+  padding:6px 10px;
+  border-radius:30px;
+  font-size:11px;
+}
+
+.about-box {
+  background:linear-gradient(135deg,#171327,#10101a);
+  border:1px solid #ffffff15;
+  border-radius:20px;
+  padding:40px;
+}
+
+.about-box p {color:var(--muted);line-height:2;margin-top:15px}
+
+.certificates {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.certificate-card {text-align:center}
+.certificate-card .service-icon {font-size:35px}
+.certificate-card p {font-size:13px;color:var(--muted);margin-top:10px}
+
+.contact-box {
+  text-align:center;
+  background:linear-gradient(130deg,#24183b,#171325,#10101a);
+  border:1px solid #ffffff15;
+  border-radius:22px;
+  padding:65px 20px;
+}
+
+.contact-box h2 {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(32px,6vw,53px);
+  margin-bottom:18px;
+}
+
+.contact-box p {color:var(--muted);margin-bottom:30px;line-height:1.8}
+
+footer {
+  border-top:1px solid #ffffff15;
+  padding:30px 0;
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
+}
+
+.reveal {
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s,transform .8s;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:800px) {
+  .services {grid-template-columns:repeat(2,1fr)}
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:75px;left:5%;
+    width:90%;
+    background:#171523;
+    padding:25px;
+    border-radius:12px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .nav-links.open {display:flex}
+  .menu-btn {display:block}
+}
+
+@media(max-width:550px) {
+  .projects,.certificates {grid-template-columns:1fr}
+  .services {grid-template-columns:1fr}
+  .section {padding:75px 0}
+  .about-box {padding:25px}
+  .hero h1 {letter-spacing:-2px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">Rahul<span>Studio.</span></a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#certificates" onclick="closeMenu()">Certificates</a>
+      <a href="#contact" class="btn" onclick="closeMenu()">Contact Now ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="glow"></div>
+  <div class="container hero-content reveal">
+    <div class="eyebrow">CREATIVE DESIGNER & DIGITAL MARKETER</div>
+
+    <h1>
+      Ideas into visuals.<br>
+      Creativity into <span class="gradient">growth.</span>
+    </h1>
+
+    <p>
+      Hi, I'm Rahul Kumar. I create engaging designs,
+      compelling videos and digital marketing experiences
+      that help brands build their online presence.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#portfolio" class="btn">Explore My Work ↗</a>
+      <a href="mailto:rahulkrr256@gmail.com" class="btn-outline">Let's Work Together</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-heading reveal">
+      <small>WHAT I DO</small>
+      <h2>My Creative Services</h2>
+      <p>Creative solutions for brands, businesses and digital platforms.</p>
+    </div>
+
+    <div class="services">
+      <div class="service-card reveal">
+        <div class="service-icon">🎨</div>
+        <h3>Graphic Design</h3>
+        <p>Social media creatives, advertisements, banners and promotional designs.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🎬</div>
+        <h3>Video Editing</h3>
+        <p>Engaging short-form videos, reels and promotional video content.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">📈</div>
+        <h3>Digital Marketing</h3>
+        <p>Content marketing, email marketing and digital campaign planning.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">📱</div>
+        <h3>Social Media</h3>
+        <p>Social media content creation, management and advertising support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="section-heading reveal">
+      <small>MY CREATIVE WORK</small>
+      <h2>Selected Projects</h2>
+      <p>My designs, video editing and creative experiments.</p>
+    </div>
+
+    <div class="projects">
+      <div class="project-card reveal">
+        <div class="project-image">Add your original design here</div>
+        <h3>Graphic Design Showcase</h3>
+        <p>Original and redesigned advertising creatives.</p>
+        <div class="tags">
+          <span class="tag">Before & After</span>
+          <span class="tag">Advertising</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image">Add your final edited video here</div>
+        <h3>Video Editing Showcase</h3>
+        <p>Original footage and final edited video comparisons.</p>
+        <div class="tags">
+          <span class="tag">Video Editing</span>
+          <span class="tag">Reels</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-box reveal">
+      <div class="section-heading">
+        <small>GET TO KNOW ME</small>
+        <h2>About Rahul</h2>
+      </div>
+      <p>
+        I'm Rahul Kumar, a creative enthusiast interested in
+        digital marketing, graphic design, video editing and
+        social media management.
+      </p>
+      <p>
+        I enjoy transforming ideas into creative visuals and
+        exploring how digital content can help businesses
+        communicate with their audiences.
+      </p>
+      <p>
+        I'm continuously developing my skills through
+        certifications, personal projects and practical learning.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="certificates">
+  <div class="container">
+    <div class="section-heading reveal">
+      <small>MY LEARNING JOURNEY</small>
+      <h2>Certifications</h2>
+      <p>Professional learning and digital marketing education.</p>
+    </div>
+
+    <div class="certificates">
+      <div class="certificate-card reveal">
+        <div class="service-icon">🏅</div>
+        <h3>Digital Marketing</h3>
+        <p>HubSpot Academy</p>
+      </div>
+
+      <div class="certificate-card reveal">
+        <div class="service-icon">🏅</div>
+        <h3>Content Marketing</h3>
+        <p>HubSpot Academy</p>
+      </div>
+
+      <div class="certificate-card reveal">
+        <div class="service-icon">🏅</div>
+        <h3>Email Marketing</h3>
+        <p>HubSpot Academy</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div class="eyebrow">HAVE A PROJECT IN MIND?</div>
+      <h2>Let's create something <span class="gradient">amazing.</span></h2>
+      <p>Have an idea, a project or a collaboration in mind?<br>Let's connect and make it happen.</p>
+      <a href="mailto:rahulkrr256@gmail.com?subject=Project%20Inquiry%20-%20RahulStudio" class="btn">
+        Contact Now ↗
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 RahulStudio. Created by Rahul Kumar.
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+function closeMenu() {
+  document.getElementById('navLinks').classList.remove('open');
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
